@@ -137,7 +137,7 @@ def _transitive_closure_dense_numpy(A, kind='metric', verbose=False):
 	# Compute Transitive Closure
 	for i in xrange(0,n):
 		if verbose:
-			print 'calc row:',i+1,'of',m
+			print('calc row:',i+1,'of',m)
 		for j in xrange(0,n):
 			
 			if kind == 'metric':
@@ -233,7 +233,7 @@ def B_measure(D, Cm, verbose=False):
 		
 		if verbose:
 			if i%10000==0 and i>0:
-				print i,'of',len(rows)
+				print(i,'of',len(rows))
 
 	return B
 
