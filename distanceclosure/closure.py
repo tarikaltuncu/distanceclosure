@@ -135,10 +135,10 @@ def _transitive_closure_dense_numpy(A, kind='metric', verbose=False):
 		raise ValueError("Diagonal has to be zero for matrix computation to be correct")
 
 	# Compute Transitive Closure
-	for i in xrange(0,n):
+	for i in range(0,n):
 		if verbose:
 			print('calc row:',i+1,'of',m)
-		for j in xrange(0,n):
+		for j in range(0,n):
 			
 			if kind == 'metric':
 				vec = C[i,:] + C[:,j]
