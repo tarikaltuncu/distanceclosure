@@ -92,7 +92,7 @@ class Dijkstra(object):
 
 		try:
 			operators = __operators__[kind]
-		except Exception, e:
+		except Exception as e:
 			raise AttributeError("kind parameter must be either 'metric' or 'ultrametric'")
 
 		# Shortest Distances in Parallel
@@ -171,7 +171,7 @@ class Dijkstra(object):
 		
 		try:
 			operators = __operators__[kind]
-		except Exception, e:
+		except Exception as e:
 			raise AttributeError("kind parameter must be either 'metric' or 'ultrametric'")
 
 		# Shortest Distances
