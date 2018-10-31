@@ -21,7 +21,7 @@ Note:
 #    Thiago Simas <@.>
 #    All rights reserved.
 #    MIT license.
-from .utils import dict2sparse
+from distanceclosure.utils import dict2sparse
 import numpy as np
 import heapq
 from joblib import Parallel, delayed
