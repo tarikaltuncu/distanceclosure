@@ -88,7 +88,7 @@ class Dijkstra(object):
 
 		"""
 		if self.verbose:
-			print 'Calculating APSD - All Pairs Shortest Distances'
+			print('Calculating APSD - All Pairs Shortest Distances')
 
 		try:
 			operators = __operators__[kind]
@@ -132,7 +132,7 @@ class Dijkstra(object):
 				Ex: ``{'a':{'c':['a','b','c']}}``.
 		"""
 		if self.verbose:
-			print 'Calculating APSP - All Pairs Shortest Paths'
+			print('Calculating APSP - All Pairs Shortest Paths')
 
 		for path in self.local_paths:
 			if path is None:
@@ -497,41 +497,41 @@ if __name__ == '__main__':
 	#d = Dijkstra.from_numpy_matrix(matrix, directed=False, verbose=True)
 	#d = Dijkstra.from_sparse_matrix(sparse, directed=False, verbose=True)
 	
-	print '=== SSSP ==='
-	print '> Source:',source
-	print '---'
+	print( '=== SSSP ===')
+	print( '> Source:',source)
+	print( '---')
 	dc_lenghts, dc_paths = d.single_source_shortest_distances(source=source, kind='metric', engine='python')
 	dc_paths = d.single_source_shortest_paths(source=source, engine='python')
 	
-	print '-- NX Results: --'
-	print '> Lenghts:',nx_lenghts
-	print '> Paths:',nx_paths
+	print( '-- NX Results: --')
+	print( '> Lenghts:',nx_lenghts)
+	print( '> Paths:',nx_paths)
 
-	print '--- DC Results ---'
-	print '> Lenghts:',d.get_shortest_distances(source=source, translate=True)
-	print '> Paths:',d.get_shortest_paths(source=source, translate=True)
+	print( '--- DC Results ---')
+	print( '> Lenghts:',d.get_shortest_distances(source=source, translate=True))
+	print( '> Paths:',d.get_shortest_paths(source=source, translate=True))
 
 	assert (nx_lenghts == d.get_shortest_distances(source=source, translate=True))
 	#assert (nx_paths == dc_paths)
 
-	print '=== APSP ==='	
+	print( '=== APSP ==='	)
 
 	nx_all_complete_paths = nx.all_pairs_dijkstra_path(G, 'weight')
 
 	dc_all_lenghts, dc_all_local_paths = d.all_pairs_shortest_distances(n_jobs=2, engine='python')
 	dc_all_complete_paths = d.all_pairs_shortest_paths(n_jobs=2, engine='python')
 	
-	print '-- NX Results: --'
-	print '> Paths:',nx_all_complete_paths
+	print( '-- NX Results: --')
+	print( '> Paths:',nx_all_complete_paths)
 
-	print '-- DC Results: --'
-	print '> Lenghts;',dc_all_lenghts
-	print '> Paths:',dc_all_complete_paths
+	print( '-- DC Results: --')
+	print( '> Lenghts;',dc_all_lenghts)
+	print( '> Paths:',dc_all_complete_paths)
 
-	print '==='
-	print nx_all_complete_paths['s']
-	#print dc_all_complete_paths[0]
-	print d.get_shortest_paths(translate=True)['s']
+	print( '===')
+	print( nx_all_complete_paths['s'])
+	#print( dc_all_complete_paths[0])
+	print( d.get_shortest_paths(translate=True)['s'])
 
 	assert (nx_all_complete_paths == d.get_shortest_paths(translate=True))
 
