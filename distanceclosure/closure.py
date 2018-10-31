@@ -15,7 +15,7 @@ These algorithms work with undirected weighted (distance) graphs.
 #    MIT license.
 import numpy as np
 import scipy.sparse as ssp
-from .dijkstra import Dijkstra
+from distanceclosure.dijkstra import Dijkstra
 from itertools import izip
 __name__ = 'distanceclosure'
 __author__ = """\n""".join(['Luis Rocha <rocha@indiana.com>',
