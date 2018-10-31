@@ -26,7 +26,7 @@ import numpy as np
 import heapq
 from joblib import Parallel, delayed
 #import dill
-from _dijkstra import _py_single_source_shortest_distances, _py_single_source_complete_paths
+from distanceclosure._dijkstra import _py_single_source_shortest_distances, _py_single_source_complete_paths
 from cython._dijkstra import _cy_single_source_shortest_distances, _cy_single_source_complete_paths
 
 
