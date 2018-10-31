@@ -16,7 +16,7 @@ These algorithms work with undirected weighted (distance) graphs.
 import numpy as np
 import scipy.sparse as ssp
 from distanceclosure.dijkstra import Dijkstra
-from itertools import izip
+#from itertools import izip
 __name__ = 'distanceclosure'
 __author__ = """\n""".join(['Luis Rocha <rocha@indiana.com>',
 							'Thiago Simas <@.>',
@@ -228,7 +228,7 @@ def B_measure(D, Cm, verbose=False):
 	D[D==np.inf] = np.nan
 	means = np.nanmean(D, axis=1)
 
-	for i, (row, col) in enumerate(izip(rows,cols)):
+	for i, (row, col) in enumerate(zip(rows,cols)):
 		B[row,col] = means[row] / float( Cm[row,col] )
 		
 		if verbose:
